@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cat vs Dog Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cat 🐱 vs Dog 🐶 Classifier</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="fileInput" accept="image/*" required>
+            <br><br>
+
+            <!-- Image Preview -->
+            <img id="preview" src="#" alt="Image Preview" 
+                 style="display:none; width:200px; margin-bottom:15px; border-radius:10px;">
+
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <h2>{{ prediction }}</h2>
+            <h3>Confidence: {{ confidence }}%</h3>
+        {% endif %}
+    </div>
+
+    <!-- JavaScript for Image Preview -->
+    <script>
+        const fileInput = document.getElementById("fileInput");
+        const preview = document.getElementById("preview");
+
+        fileInput.onchange = evt => {
+            const [file] = fileInput.files;
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

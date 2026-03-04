@@ -53,7 +53,7 @@ ImageClassification/
 
 1. Clone the repository
 
-git clone https://github.com/yourusername/ImageClassification.git
+git clone https://github.com/santoshchau143/ImageClassification.git
 
 2. Install required libraries
 

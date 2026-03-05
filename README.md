@@ -22,7 +22,7 @@ This project is a deep learning image classification system created with Convolu
 - Flask
 - HTML
 - CSS
-- NumPy
+  
 
 ---
 
